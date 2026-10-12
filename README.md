@@ -1,4 +1,6 @@
-# Panadería El Trigo Dorado
+<p align="left"> <img src="images/Logo.png" width="600"></p>
+
+## Panadería El Trigo Dorado
 
 ## 1. El proyecto
 
@@ -23,8 +25,9 @@ El proyecto está organizado de la siguiente manera:
 │   └── Croissant.jpg
 │   └── fondo.jpg
 │   └── pan_campesino.jpg
-│   └── pastel_chocolate-jpg
+│   └── pastel_chocolate.jpg
 └── capturas/
+│   └── ...
 ```
 
 ### Etiquetas semánticas utilizadas
@@ -77,13 +80,13 @@ La variable --radio se emplea para aplicar bordes redondeados a componentes como
 
 | Regla             | Especificidad | Conflicto|
 | ----------------- | ------------- | ------------- |
-| `section ul`      | (0,0,2)       |  `display inline-block`, `padding-left1.75rem`  |            
-| `#informacion ul` | (1,0,1)       |  `display block` , `padding-left2rem`     |
+| `section ul`      | (0,0,2)       |  `display: inline-block`<br>, `padding-left:1.75rem`  |            
+| `#informacion ul` | (1,0,1)       |  `display: block`<br> , `padding-left: 2rem`     |
 
 <p align="center"><img src="capturas/conflicto1.jpg" width="600"></p>
 
 - Gana `#informacion ul` 
-- Analisis: Porque contiene un ID. Su especificidad (1,0,1) es mayor que la de `section ul` (0,0,2), por lo que las propiedades de la segunda regla sobrescriben a las de la primera.
+- Análisis: Porque contiene un ID. Su especificidad (1,0,1) es mayor que la de `section ul` (0,0,2), por lo que las propiedades de la segunda regla sobrescriben a las de la primera.
 
 ### Conflicto 2: Tarjetas de opiniones
 
@@ -91,8 +94,8 @@ La variable --radio se emplea para aplicar bordes redondeados a componentes como
 
 | Regla                | Especificidad (ID, Clase, Etiqueta) | Propiedades en conflicto                                                          |
 | -------------------- | ----------------------------------- | --------------------------------------------------------------------------------- |
-| `.opinion-card`      | (0,1,0)                             | `background-color: rgba(255,255,255,.85)`, `margin: 1rem auto`, `padding: 1.5rem` |
-| `#opiniones article` | (1,0,1)                             | `background-color: var(--color-blanco)`, `margin: 1rem 0`, `padding: 1rem`        |
+| `.opinion-card`      | (0,1,0)                             | `background-color: rgba(255,255,255,.85)`<br>, `margin: 1rem auto`, `padding: 1.5rem` |
+| `#opiniones article` | (1,0,1)                             | `background-color: var(--color-blanco)`, <br>`margin: 1rem 0`, `padding: 1rem`        |
 
 <p align="center"><img src="capturas/conflicto2.jpg" width="600"></p>
 
@@ -106,8 +109,8 @@ La variable --radio se emplea para aplicar bordes redondeados a componentes como
 
  | Regla          | Especificidad (ID, Clase, Etiqueta) | Propiedades en conflicto                                                      |
 | -------------- | ----------------------------------- | ----------------------------------------------------------------------------- |
-| `.info-bloque` | (0,1,0)                             | `display: inline-block`, `vertical-align: top`, `width: 45%`, `margin: 1rem`  |
-| `.info-card`   | (0,1,0)                             | `display: inline-block`, `vertical-align: top`, `width: 45%`, `margin: .5rem` |
+| `.info-bloque` | (0,1,0)                             | `display: inline-block`<br>, `vertical-align: top`, `width: 45%`, `margin: 1rem`  |
+| `.info-card`   | (0,1,0)                             | `display: inline-block`<br>, `vertical-align: top`, `width: 45%`, `margin: .5rem` |
 
 <p align="center"><img src="capturas/conflicto3.jpg" width="600"></p>
 
@@ -287,7 +290,7 @@ blockquote::before {
 
 ## 10. Capturas 
 
-## 10. Capturas
+Las siguientes capturas muestran las dos páginas del proyecto en escritorio y en una resolución de 360 px de ancho.
 
 ### Página principal (escritorio)
 
