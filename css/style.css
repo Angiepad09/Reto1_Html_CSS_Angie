@@ -1,0 +1,96 @@
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+    --color-principal: #8b4513;
+    --color-secundario: #f5deb3;
+    --color-acento: #ff9800;
+    --color-texto: #333;
+    --color-blanco: #ffffff;
+
+    --fuente-principal: Arial, Helvetica, sans-serif;
+
+    --espacio: 1rem;
+    --radio: 12px;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--fuente-principal);
+    color: var(--color-texto);
+    line-height: 1.6;
+    overflow-wrap: break-word;
+
+    background:
+    linear-gradient(
+        rgba(255,255,255,0.85),
+        rgba(255,255,255,0.85)
+    ),
+    url("../images/fondo-pan.jpg");
+
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+main{
+    max-width: 1000px;
+    margin: auto;
+    padding: var(--espacio);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background: linear-gradient(
+        90deg,
+        var(--color-principal),
+        var(--color-acento)
+    );
+
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h2{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+nav{
+    margin-top: 1rem;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.3rem;
+    padding: 0.5rem;
+}
+
+nav a:hover{
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+
+nav a:focus-visible{
+    outline: 3px solid yellow;
+}
+nav br { display: none; }
