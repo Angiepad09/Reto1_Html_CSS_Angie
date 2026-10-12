@@ -12,13 +12,15 @@ El público objetivo son personas que buscan productos de panadería artesanal y
 
 El proyecto está organizado de la siguiente manera:
 
+```text
 ├── index.html
-├── contacto.html
+├── pedidos.html
 ├── README.md
 ├── css/
 │   └── styles.css
-├── image/
+├── images/
 └── capturas/
+```
 
 ### Etiquetas semánticas utilizadas
 

@@ -15,11 +15,11 @@
         <h2>Panadería El Trigo Dorado</h2>
 
         <nav>
-            <a href="#inicio">Inicio</a><br>
-            <a href="#productos">Productos</a><br>
-            <a href="#informacion">Horarios</a><br>
-            <a href="#opiniones">Opiniones</a><br>
-            <a href="#ubicacion">Ubicación</a><br>
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#informacion">Horarios</a>
+            <a href="#opiniones">Opiniones</a>
+            <a href="#ubicacion">Ubicación</a>
             <a href="pedidos.html">Pedidos</a>
         </nav>
     </header>
@@ -54,35 +54,32 @@
         <section id="productos">
             <h2>Nuestros productos</h2>
 
-            <article >
-                <img src="images/pan_campesino.jpg"
-                     alt="Pan campesino recién horneado">
+            <article class="producto-card">
+                <img src="images/pan_campesino.jpg" alt="Pan campesino recién horneado">
 
-                <h3>Pan campesino</h3>
+                <h3 class="producto-card__titulo">Pan campesino</h3>
 
-                <p>
+                <p class="producto-card__descripcion">
                     Tradicional, crujiente y elaborado diariamente.
                 </p>
             </article>
 
-            <article>
-                <img src="images/croissant.jpg"
-                     alt="Croissant dorado de mantequilla">
+            <article class="producto-card">
+                <img src="images/croissant.jpg" alt="Croissant dorado de mantequilla">
 
-                <h3>Croissant</h3>
+                <h3 class="producto-card__titulo">Croissant</h3>
 
-                <p>
+                <p class="producto-card__descripcion">
                     Preparado con mantequilla y horneado cada mañana.
                 </p>
             </article>
 
-            <article>
-                <img src="images/pastel_chocolate.jpg"
-                     alt="Pastel de chocolate">
+            <article class="producto-card">
+                <img src="images/pastel_chocolate.jpg" alt="Pastel de chocolate">
 
-                <h3>Pastel de chocolate</h3>
+                <h3 class="producto-card__titulo">Pastel de chocolate</h3>
 
-                <p>
+                <p class="producto-card__descripcion">
                     Ideal para celebraciones y ocasiones especiales.
                 </p>
             </article>
@@ -110,7 +107,7 @@
 
             <p>
                 Consulta nuestros precios y disponibilidad
-                en la página de <a href="contacto.html">pedidos</a>.
+                en la página de <a href="pedidos.html">pedidos</a>.
             </p>
         </section>
 
@@ -123,7 +120,7 @@
                         "El mejor pan de la ciudad, siempre fresco
                         y delicioso."
                     </p>
-                </blockquote>
+                </blockquote>   
 
                 <footer>
                     <cite>María Gómez</cite>
@@ -173,13 +170,9 @@
     </main>
 
     <footer>
-        <p>
-            2026<sup>&copy;</sup> Panadería El Trigo Dorado
-        </p>
-
-        <p>
-            Pan recién horneado todos los días.
-        </p>
+        <p>2026<sup>&copy;</sup> Panadería El Trigo Dorado</p>
+        <p>Pan recién horneado todos los días.</p>
+        <p>Hecho por <abbr title="Angie Padilla Galvis">APG</abbr></p>
     </footer>
 
 </body>

@@ -2,7 +2,7 @@
    VARIABLES
 ========================= */
 
-:root{
+:root {
     --color-principal: #8b4513;
     --color-secundario: #f5deb3;
     --color-acento: #ff9800;
@@ -19,30 +19,23 @@
    GENERAL
 ========================= */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: var(--fuente-principal);
     color: var(--color-texto);
     line-height: 1.6;
     overflow-wrap: break-word;
-
     background:
-    linear-gradient(
-        rgba(255,255,255,0.85),
-        rgba(255,255,255,0.85)
-    ),
-    url("../images/fondo-pan.jpg");
-
-    background-size: cover;
-    background-attachment: fixed;
+        linear-gradient(rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)), url("../images/fondo.jpg") center / cover fixed no-repeat;
 }
 
-main{
+main {
     max-width: 1000px;
     margin: auto;
     padding: var(--espacio);
@@ -52,19 +45,17 @@ main{
    HEADER
 ========================= */
 
-header{
-    background: linear-gradient(
-        90deg,
-        var(--color-principal),
-        var(--color-acento)
-    );
+header {
+    background: linear-gradient(90deg,
+            var(--color-principal),
+            var(--color-acento));
 
     color: white;
     text-align: center;
     padding: 1rem;
 }
 
-header h2{
+header h2 {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -73,24 +64,114 @@ header h2{
    NAVEGACIÓN
 ========================= */
 
-nav{
-    margin-top: 1rem;
-}
-
-nav a{
+nav a {
     color: white;
     text-decoration: none;
     display: inline-block;
     margin: 0.3rem;
     padding: 0.5rem;
-}
-
-nav a:hover{
-    background-color: rgba(255,255,255,0.2);
     border-radius: 5px;
 }
 
-nav a:focus-visible{
-    outline: 3px solid yellow;
+nav a:hover {
+    color: var(--color-blanco);
+    background-color: rgba(255, 255, 255, 0.2);
 }
-nav br { display: none; }
+
+nav a:focus-visible {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 3px;
+}
+
+nav br {
+    display: none;
+}
+
+form:focus-within {
+    border-left: 4px solid var(--color-acento);
+    padding-left: 1rem;
+}
+
+section:target {
+    border-color: var(--color-acento);
+    animation: resaltar 1s ease;
+}
+
+blockquote::before {
+    content: "❝ ";
+    color: var(--color-acento);
+    font-size: 1.5rem;
+}
+
+/* Indicador decorativo de los títulos */
+section>h2::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 3px;
+    margin-top: 0.3rem;
+    background-color: var(--color-acento);
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+section {
+    background: rgba(255, 255, 255, 0.85);
+
+    margin: 1.5rem 0;
+    padding: 1rem;
+
+    border-top: 4px solid var(--color-acento);
+    border-right: 2px solid var(--color-principal);
+    border-bottom: 2px solid var(--color-principal);
+    border-left: 2px solid var(--color-principal);
+
+    border-radius: var(--radio);
+}
+
+/* =========================
+   ALINEACIÓN DEL TEXTO
+========================= */
+
+section {
+    text-align: center;
+}
+
+section h1,
+section h2,
+section h3 {
+    text-align: center;
+}
+
+section p {
+    text-align: left;
+}
+
+/* Listas centradas dentro de la sección */
+section ul,
+section ol {
+    display: inline-block;
+    text-align: left;
+    padding-left: 1.75rem;
+}
+
+/* Tabla legible */
+table {
+    text-align: center;
+}
+
+/* Formulario ordenado */
+form {
+    text-align: left;
+}
+
+/* Opiniones centradas */
+#opiniones blockquote {
+    text-align: center;
+}
+
+#opiniones article footer {
+    text-align: center;
+}
