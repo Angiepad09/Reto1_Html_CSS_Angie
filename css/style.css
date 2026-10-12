@@ -1,7 +1,3 @@
-/* =========================
-   VARIABLES
-========================= */
-
 :root {
     --color-principal: #8b4513;
     --color-secundario: #f5deb3;
@@ -88,13 +84,6 @@ section:target {
     animation: resaltar 1s ease;
 }
 
-blockquote::before {
-    content: "❝ ";
-    color: var(--color-acento);
-    font-size: 1.5rem;
-}
-
-/* Indicador decorativo de los títulos */
 section>h2::after {
     content: "";
     display: block;
@@ -110,15 +99,12 @@ section>h2::after {
 
 section {
     background: rgba(255, 255, 255, 0.85);
-
     margin: 1.5rem 0;
     padding: 1rem;
-
     border-top: 4px solid var(--color-acento);
     border-right: 2px solid var(--color-principal);
     border-bottom: 2px solid var(--color-principal);
     border-left: 2px solid var(--color-principal);
-
     border-radius: var(--radio);
 }
 
@@ -130,9 +116,7 @@ section {
     text-align: center;
 }
 
-section h1,
-section h2,
-section h3 {
+section h1,section h2,section h3 {
     text-align: center;
 }
 
@@ -140,33 +124,23 @@ section p {
     text-align: left;
 }
 
-/* Listas centradas dentro de la sección */
-section ul,
-section ol {
+section ul,section ol {
     display: inline-block;
     text-align: left;
     padding-left: 1.75rem;
 }
 
-/* Tabla legible */
 table {
     text-align: center;
 }
 
-/* Formulario ordenado */
 form {
     text-align: left;
 }
 
-/* Opiniones centradas */
 #opiniones blockquote {
     text-align: center;
 }
-
-#opiniones article footer {
-    text-align: center;
-}
-
 
 /* =========================
    TARJETAS DE PRODUCTOS
@@ -225,7 +199,6 @@ form {
     background-color: #fff8ee;
 }
 
-
 /* =========================
    CITAS
 ========================= */
@@ -233,14 +206,24 @@ form {
 blockquote {
     font-style: italic;
     margin-bottom: 0.5rem;
+    position: relative;
+    padding-top: 1.5rem;
+}
+    
+blockquote::before{
+    content: "❝";
+    position: absolute;
+    top: -15px;
+    left: -10px;
+    font-size: 3rem;
+    color: var(--color-acento);
 }
 
 /* =========================
    LISTAS
 ========================= */
 
-ul,
-ol {
+ul,ol {
     padding-left: 1.75rem;
     margin: 0.75rem 0;
 }
@@ -272,8 +255,7 @@ table {
     margin: 1rem 0;
 }
 
-th,
-td {
+th,td {
     border: 1px solid #999;
     padding: .8rem;
 }
@@ -288,65 +270,65 @@ th {
 ========================= */
 
 form {
-    max-width: 700px;
-    margin: auto;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(255, 248, 238, 0.9);
+    border: 2px solid var(--color-acento);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, .2);
 }
 
-input,
-select,
-textarea {
+input,select,textarea {
     width: 100%;
-    padding: .7rem;
-    margin-top: .3rem;
+    padding: .8rem;
+    border: 1px solid #c9b79c;
+    border-radius: 6px;
+    background-color: #fffdf8;
 }
 
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid var(--color-acento);
+input:focus-visible,select:focus-visible,textarea:focus-visible {
+    outline: none;
+    border-color: var(--color-acento);
+    box-shadow: 0 0 5px rgba(255, 152, 0, .5);
 }
 
-button {
+button{
     background-color: var(--color-principal);
     color: white;
-    border: none;
     padding: .8rem 1rem;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 5px;
 }
 
 button:hover {
     background-color: var(--color-acento);
 }
 
-/* =========================
-   SELECTOR DE ATRIBUTO
-========================= */
-
 input[type="email"] {
     background-color: #fff9f0;
 }
-
-/* =========================
-   COMBINADOR
-========================= */
 
 section>h2 {
     color: var(--color-principal);
 }
 
+button + button{
+    margin-left: .5rem;
+}
+
+label{
+    font-weight: bold;
+    color: var(--color-principal);
+}
 /* =========================
    ANIMACIÓN
 ========================= */
 
 @keyframes resaltar {
-    from {
-        background-color: #fff0c8;
-    }
-
-    to {
-        background-color: white;
-    }
+    from {background-color: #fff0c8;}
+    to {background-color: white;}
 }
 
 /* =========================
@@ -370,11 +352,13 @@ section>h2 {
     border-left: 5px solid #ff9800;
     border-radius: 10px;
     box-shadow: 4px 4px 10px rgba(0,0,0,.3);
-
 }
 
-#informacion ul,
-#informacion ol {
+/* =========================
+   LISTAS Y TEXTO DE INFORMACIÓN
+========================= */
+
+#informacion ul,#informacion ol {
     display: block;
     max-width: 600px;
     margin: 1rem auto;
@@ -395,4 +379,183 @@ section>h2 {
 
 #informacion p {
     margin-top: 1rem;
+}
+
+
+/* =========================
+   OPINIONES DE CLIENTES
+========================= */
+.opinion-card{
+    background-color: rgba(255,255,255,.85);
+    max-width: 900px;
+    margin: 1rem auto;
+    padding: 1.5rem;
+    border-left: 5px solid var(--color-acento);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.15);
+}
+
+.opinion-card footer{
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.opinion-card cite{
+    display: inline-block;
+    background-color: var(--color-secundario);
+    padding: .5rem 1rem;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+#opiniones article {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: var(--color-blanco);
+    border-radius: var(--radio);
+}
+
+#opiniones article footer {
+    display: block;
+    background: transparent;
+    color: var(--color-principal);
+    padding: 0;
+    margin-top: 0.5rem;
+    text-align: right;
+}
+
+#opiniones article cite {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    background-color: var(--color-secundario);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+/* =========================
+   COMO LLEGAR
+========================= */
+
+#ubicacion{
+    text-align: center;
+}
+
+#ubicacion iframe{
+    width: 90%;
+    max-width: 800px;
+    height: 400px;
+    border: 4px solid var(--color-acento);
+    border-radius: 12px;
+    margin: 1rem auto;
+    display: block;
+}
+
+#ubicacion a{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 1.2rem;
+    background-color: var(--color-principal);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+#ubicacion a:hover{
+    background-color: var(--color-acento);
+}
+
+/* =========================
+   PIE DE PÁGINA PRINCIPAL
+========================= */
+
+body>footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--color-principal);
+    color: white;
+}
+
+/* =========================
+   DISEÑO RESPONSIVE
+========================= */
+
+@media (max-width: 360px) {
+    body {
+        font-size: 0.9rem;
+        background-attachment: scroll;
+    }
+    header {
+        padding: 0.75rem;
+    }
+    header h2 {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+    nav a {
+        display: block;
+        margin: 0.2rem 0;
+    }
+    main {
+        padding: 0.5rem;
+        min-width: 0;
+    }
+    section {
+        padding: 0.75rem;
+        margin: 1rem 0;
+        min-width: 0;
+    }
+    #productos {
+        grid-template-columns: 1fr;
+    }
+    .producto-card {
+        width: 100%;
+        min-width: 0;
+    }
+    .producto-card img {
+        height: auto;
+        max-width: 100%;
+    }
+    .info-card{
+        display: block;
+        width: 95%;
+    }
+    iframe {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 250px;
+        border: 0;
+    }
+    table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        font-size: 0.8rem;
+    }
+    th,td {
+        padding: 0.4rem;
+    }
+    input, select, textarea {
+        min-width: 0;
+        font-size: 1rem;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        margin-bottom: .5rem;
+    }
+
+    button + button{
+        margin-left: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *, *::before, *::after {
+        animation-duration: 0.01ms;
+        transition-duration: 0.01ms;
+    }
 }
