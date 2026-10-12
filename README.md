@@ -218,3 +218,94 @@ La regla termina aplicándose al segundo producto ("Croissant"), ya que ocupa un
 
 <p align="center"><img src="capturas/selector.jpg" width="600"></p>
 
+## 8. Responsive
+
+Para adaptar el sitio a dispositivos móviles se utilizó la siguiente media query:
+
+```css
+@media (max-width: 360px)
+```
+
+Cuando el ancho de la pantalla es igual o inferior a 360px, se aplican varios cambios para mejorar la visualización y la usabilidad.
+
+| Elemento                | Cambio realizado                                                           | Motivo                                             |
+| ----------------------- | -------------------------------------------------------------------------- | -------------------------------------------------- |
+| Menú de navegación      | Los enlaces pasan de mostrarse en línea a mostrarse en bloques verticales. | Facilita el acceso desde pantallas pequeñas.       |
+| Tarjetas de productos   | La cuadrícula pasa de tres columnas a una sola columna.                    | Evita que las tarjetas queden demasiado estrechas. |
+| Tarjetas de información | Aumentan su ancho al 95% y se muestran una debajo de otra.                 | Mejora la lectura en dispositivos móviles.         |
+| Mapa                    | Se adapta al ancho disponible y reduce su altura.                          | Evita el desbordamiento horizontal.                |
+| Tabla de precios        | Permite desplazamiento horizontal mediante scroll.                         | Mantiene la legibilidad sin romper el diseño.      |
+| Botones                 | Pasan a ocupar el ancho disponible.                                        | Facilita su uso en pantallas táctiles.             |
+
+## 9. Problemas y soluciones
+
+### Problema 1: Marcadores de listas mal alineados
+
+**Problema**
+
+Los números de las listas ordenadas (`ol`) y los marcadores de las listas desordenadas (`ul`) no tenían una separación adecuada respecto al contenido, lo que afectaba la legibilidad.
+
+**Causa**
+
+El espaciado aplicado a las listas no era suficiente para separar correctamente los marcadores y el texto.
+
+**Solución**
+
+Se ajustó la propiedad `padding-left` de las listas para aumentar la separación y mejorar la presentación visual.
+
+```css
+#informacion ul,
+#informacion ol {
+    padding-left: 2rem;
+}
+```
+
+### Problema 2: Superposición de la comilla decorativa en las opiniones
+
+**Problema**
+
+La comilla decorativa utilizada en las opiniones de los clientes se superponía al texto de las citas, afectando la legibilidad.
+
+**Causa**
+
+El pseudoelemento `blockquote::before` utiliza posicionamiento absoluto para colocar la comilla decorativa. Inicialmente, su posición no dejaba suficiente espacio respecto al contenido de la cita.
+
+**Solución**
+
+Se añadió espacio superior al blockquote y se ajustó la posición de la comilla decorativa para evitar la superposición.
+
+```css
+blockquote {
+    padding-top: 1.5rem;
+}
+
+blockquote::before {
+    top: -15px;
+    left: -10px;
+}
+```
+
+## 10. Capturas 
+
+## 10. Capturas
+
+### Página principal (escritorio)
+
+<p align="center"><img src="capturas/indext.png" width="600"></p>
+<p align="center"><img src="capturas/indext2.png" width="600"></p>
+
+### Página de pedidos (escritorio)
+
+<p align="center"><img src="capturas/pedidos1.png" width="600"></p>
+<p align="center"><img src="capturas/pedidos2.png" width="600"></p>
+
+### Página principal (360 px)
+
+<p align="center"><img src="capturas/index1360.jpg" width="600"></p>
+<p align="center"><img src="capturas/index2360.jpg" width="600"></p>
+
+### Página de pedidos (360 px)
+
+<p align="center"><img src="capturas/pedidos1360.jpg" width="600"></p>
+<p align="center"><img src="capturas/pedidos2360.jpg" width="600"></p>
+
