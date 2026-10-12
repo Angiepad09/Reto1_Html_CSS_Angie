@@ -20,12 +20,13 @@ El proyecto está organizado de la siguiente manera:
 ├── pedidos.html
 ├── README.md
 ├── css/
-│   └── styles.css
+│   └── style.css
 ├── images/
 │   └── Croissant.jpg
 │   └── fondo.jpg
 │   └── pan_campesino.jpg
 │   └── pastel_chocolate.jpg
+│   └── Logo.png
 └── capturas/
 │   └── ...
 ```
@@ -77,6 +78,7 @@ La variable --radio se emplea para aplicar bordes redondeados a componentes como
 ### Conflicto 1: Listas de la sección Información
 
 ### Especificidad
+Reglas que compiten sobre las listas `<ul>` de la sección Información:
 
 | Regla             | Especificidad | Conflicto|
 | ----------------- | ------------- | ------------- |
@@ -91,6 +93,7 @@ La variable --radio se emplea para aplicar bordes redondeados a componentes como
 ### Conflicto 2: Tarjetas de opiniones
 
 ### Especificidad
+Reglas que compiten sobre los elementos `<article>` de la sección Opiniones:
 
 | Regla                | Especificidad (ID, Clase, Etiqueta) | Propiedades en conflicto                                                          |
 | -------------------- | ----------------------------------- | --------------------------------------------------------------------------------- |
@@ -105,7 +108,7 @@ La variable --radio se emplea para aplicar bordes redondeados a componentes como
  La regla #opiniones article gana porque contiene un ID. Su especificidad (1,0,1) es mayor que la de .opinion-card (0,1,0), por lo que reemplaza las propiedades background-color, margin y padding definidas en la clase .opinion-card.
 
  ### Conflicto 3: Tarjetas de información (empate resuelto por orden)
-
+Reglas que compiten sobre los elementos que tienen simultáneamente las clases `.info-bloque` e `.info-card`:
 
  | Regla          | Especificidad (ID, Clase, Etiqueta) | Propiedades en conflicto                                                      |
 | -------------- | ----------------------------------- | ----------------------------------------------------------------------------- |
@@ -312,3 +315,8 @@ Las siguientes capturas muestran las dos páginas del proyecto en escritorio y e
 <p align="center"><img src="capturas/pedidos1360.jpg" width="600"></p>
 <p align="center"><img src="capturas/pedidos2360.jpg" width="600"></p>
 
+
+## GitHub Pages
+🔗 **Acceder a la pagina web:**
+
+https://angiepad09.github.io/Reto1_Html_CSS_Angie/pedidos.html
