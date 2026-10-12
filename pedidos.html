@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -82,16 +81,70 @@
             </p>
         </section>
 
-       
+         <section id="pedidos">
+            <h2>Realiza tu pedido</h2>
 
+            <p>
+                Completa el siguiente formulario para indicarnos
+                qué productos deseas solicitar.
+            </p>
+
+            <form action="#" method="post">
+
+                <p>
+                    <label for="nombre">Nombre completo:</label><br>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" required>
+                </p>
+
+                <p>
+                    <label for="correo">Correo electrónico:</label><br>
+                    <input type="email" id="correo" name="correo"  placeholder="panaderia@correo.com">
+                </p>
+
+                <p>
+                    <label for="telefono">Número de teléfono:</label><br>
+                    <input type="tel" id="telefono" name="telefono" placeholder="607 xxxxxxx" required>
+                </p>
+
+                <p>
+                    <label for="producto">Producto que deseas:</label><br>
+                    <select id="producto" name="producto" required>
+                        <option value="">Selecciona un producto</option>
+                        <option value="pan-campesino">Pan campesino</option>
+                        <option value="croissant">Croissant</option>
+                        <option value="pastel-chocolate">Pastel de chocolate</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="cantidad">Cantidad:</label><br>
+                    <input type="number" id="cantidad" name="cantidad" min="1" value="1" required>
+                </p>
+
+                <p>
+                    <label for="fecha">Fecha de recogida:</label><br>
+                    <input type="date" id="fecha" name="fecha" required>
+                </p>
+
+                <p>
+                    <label for="comentarios">Comentarios adicionales:</label><br>
+                    <textarea id="comentarios" name="comentarios" rows="5" cols="30" placeholder="Escribe aquí los detalles de tu pedido"></textarea>
+                </p>
+
+                <button type="submit">Enviar pedido</button>
+
+                <button type="reset">Limpiar formulario</button>
+
+            </form>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Panadería El Trigo Dorado</p>
         <p>Pan recién horneado todos los días.</p>
+        <p>Hecho por <abbr title="Angie Padilla Galvis">APG</abbr></p>
     </footer>
 
 </body>
-
 </html>
-```
+
