@@ -115,3 +115,106 @@ La variable --radio se emplea para aplicar bordes redondeados a componentes como
 
 - Análisis:
  Ambas reglas tienen la misma especificidad (0,1,0) porque ambas utilizan una sola clase. Al existir un empate, CSS aplica la regla que aparece más tarde en la hoja de estilos. Por esta razón, el valor margin: .5rem de `.info-card` reemplaza al valor margin: 1rem definido en `.info-bloque`.
+
+## 5. Herencia
+
+### Propiedad que SI hereda: `font-family`
+
+La propiedad `font-family` se definió en el elemento `body`:
+
+```css
+body {
+    font-family: var(--fuente-principal);
+}
+
+```
+Esta propiedad se hereda automáticamente por los elementos hijos. Se observa en los títulos, párrafos, listas y enlaces de las páginas.
+
+<p align="center"><img src="capturas/sihereda.jpg" width="600"></p>
+
+Lugar donde se nota: sección "Nuestros productos" y formulario de pedidos.
+
+### Propiedad que NO hereda: `border-top`
+
+La propiedad `border-top` se definió en las `section`:
+```css
+section {
+    border-top: 4px solid var(--color-acento);
+}
+```
+Esta propiedad no se hereda. En la sección "Información útil" el borde superior naranja se aplica únicamente al elemento section, pero los elementos internos como div, listas y párrafos no reciben ese borde automáticamente.
+
+La Figura 1 muestra el borde superior aplicado a la sección.
+
+<p align="center"><img src="capturas/nohereda1.jpg" width="600"></p>
+
+La Figura 2 muestra un elemento hijo (div.info-card) donde no aparece la propiedad border-top, demostrando que no fue heredada.
+
+<p align="center"><img src="capturas/nohereda2.jpg" width="600"></p>
+
+## 6. Modelo de cajas 
+
+### Cálculo del ancho total de un componente (formulario)
+
+Se utilizó el formulario de la página `pedidos.html`.
+```css
+form {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(255, 248, 238, 0.9);
+    border: 2px solid var(--color-acento);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, .2);
+}
+``` 
+
+### Medidas del componente
+
+| Elemento            | Valor |
+| ------------------- | ----- |
+| Ancho del contenido | 900px |
+| Padding izquierdo   | 32px  |
+| Padding derecho     | 32px  |
+| Borde izquierdo     | 2px   |
+| Borde derecho       | 2px   |
+
+### Cálculo
+El ancho total de una caja se obtiene sumando: 
+Contenido + Padding izquierdo + Padding derecho + Borde izquierdo + Borde derecho
+
+Aplicando los valores del formulario: 900px + 32px + 32px + 2px + 2px = 968px
+
+
+```css
+* {
+    box-sizing: border-box;
+}
+```
+Sin embargo, el proyecto utiliza box-sizing: border-box, por lo que el navegador incluye el padding y los bordes dentro de los 900px definidos por max-width. Por esta razón, el formulario mantiene un ancho visible máximo de 900px y no aumenta hasta 968px.
+
+<p align="center"><img src="capturas/calculo.jpg" width="600"></p>
+
+## 7. Selectores
+
+### Pseudoclase estructural: `:nth-of-type(even)`
+
+En la sección de productos se utilizó la pseudoclase estructural `:nth-of-type(even)`:
+
+```css
+#productos .producto-card:nth-of-type(even) {
+    background-color: #fff8ee;
+}
+```
+Esta pseudoclase cuenta los elementos hermanos del mismo tipo dentro del contenedor `#productos` y aplica los estilos a aquellos que ocupan posiciones pares.
+
+| Producto | ¿Recibe el estilo? |
+|-----------|-----------|
+| Primer producto | No |
+| Segundo producto | Sí |
+| Tercer producto |  No |
+
+La regla termina aplicándose al segundo producto ("Croissant"), ya que ocupa una posición par entre los elementos hermanos de tipo article. Permitiendo diferenciar visualmente algunas tarjetas de productos mediante un color de fondo distinto.
+
+<p align="center"><img src="capturas/selector.jpg" width="600"></p>
+
